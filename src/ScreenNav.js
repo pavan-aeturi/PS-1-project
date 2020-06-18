@@ -61,7 +61,7 @@ class ScreenNav extends Component {
             }}
           />{" "}
           <Route
-            path="/PS-1-project/portfolio"
+            path="/portfolio"
             exact
             render={() => {
               return (
@@ -74,7 +74,7 @@ class ScreenNav extends Component {
             }}
           />
           <Route
-            path="/PS-1-project/stock"
+            path="/stock"
             exact
             render={() => {
               return (
