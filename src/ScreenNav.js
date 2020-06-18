@@ -28,9 +28,10 @@ class ScreenNav extends Component {
     this.setState({ presentAddress: node });
   }
   render() {
+    // const store = configureStore({ history });
     return (
       <div className="ScreenerNav">
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Route
             path="/"
             render={() => {
@@ -40,7 +41,7 @@ class ScreenNav extends Component {
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                      <Nav.Link href="./">Home</Nav.Link>
+                      <Nav.Link href="/">Home</Nav.Link>
                       <Nav.Link href="./portfolio">Portfolio</Nav.Link>
                       <Nav.Link href="./stock">Analyse</Nav.Link>
                     </Nav>
