@@ -16,7 +16,6 @@ class Screener extends React.Component {
   componentDidMount() {
     pointerTothis = this;
     this.fetchCost();
-    this.props.changeAddress();
   }
 
   fetchCost() {
