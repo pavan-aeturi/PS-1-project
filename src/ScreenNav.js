@@ -6,7 +6,7 @@ import "./App.css";
 import logo from "./assets/vt.jpg";
 import VirtualTrade from "./VirtualTrade";
 import Navbar from "react-bootstrap/Navbar";
-import Route from "react-router-dom/Route";
+import { Route } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 import Nav from "react-bootstrap/Nav";
@@ -63,7 +63,7 @@ class ScreenNav extends Component {
             render={() => {
               return (
                 <VirtualTrade
-                  changeAddress={(node) => {
+                  changeAddress={() => {
                     this.changeAddress("/portfolio");
                   }}
                 ></VirtualTrade>
@@ -76,7 +76,7 @@ class ScreenNav extends Component {
             render={() => {
               return (
                 <Screener
-                  changeAddress={(node) => {
+                  changeAddress={() => {
                     this.changeAddress("/stock");
                   }}
                   stockName={this.state.stockName}
