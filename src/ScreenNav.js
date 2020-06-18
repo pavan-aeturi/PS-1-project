@@ -42,8 +42,8 @@ class ScreenNav extends Component {
                   <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                       <Nav.Link href="/">Home</Nav.Link>
-                      <Nav.Link href="./portfolio">Portfolio</Nav.Link>
-                      <Nav.Link href="./stock">Analyse</Nav.Link>
+                      <Nav.Link href="/portfolio">Portfolio</Nav.Link>
+                      <Nav.Link href="/stock">Analyse</Nav.Link>
                     </Nav>
                     {this.state.presentAddress === "/stock" && (
                       <Search
