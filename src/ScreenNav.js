@@ -41,9 +41,11 @@ class ScreenNav extends Component {
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                      <Nav.Link href="./">Home</Nav.Link>
-                      <Nav.Link href="./portfolio">Portfolio</Nav.Link>
-                      <Nav.Link href="./stock">Analyse</Nav.Link>
+                      <Nav.Link href="/">Home</Nav.Link>
+                      <Nav.Link href="/PS-1-project/portfolio">
+                        Portfolio
+                      </Nav.Link>
+                      <Nav.Link href="/PS-1-project/stock">Analyse</Nav.Link>
                     </Nav>
                     {this.state.presentAddress === "/stock" && (
                       <Search
@@ -59,7 +61,7 @@ class ScreenNav extends Component {
             }}
           />{" "}
           <Route
-            path="/portfolio"
+            path="/PS-1-project/portfolio"
             exact
             render={() => {
               return (
@@ -72,7 +74,7 @@ class ScreenNav extends Component {
             }}
           />
           <Route
-            path="/stock"
+            path="/PS-1-project/stock"
             exact
             render={() => {
               return (
