@@ -22,7 +22,7 @@ class Search extends Component {
   mychangeHandler(e) {
     let val = e.target.value;
     myptr.setState({ stockName: val });
-    console.log(myptr.state.stockName);
+    // console.log(myptr.state.stockName);
   }
   render() {
     return (

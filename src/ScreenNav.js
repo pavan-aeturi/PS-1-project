@@ -22,7 +22,7 @@ class ScreenNav extends Component {
   }
   change(node) {
     this.setState({ stockName: node });
-    console.log(node);
+    //console.log(node);
   }
   changeAddress(node) {
     this.setState({ presentAddress: node });
@@ -42,10 +42,8 @@ class ScreenNav extends Component {
                   <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                       <Nav.Link href="/">Home</Nav.Link>
-                      <Nav.Link href="/PS-1-project/portfolio">
-                        Portfolio
-                      </Nav.Link>
-                      <Nav.Link href="/PS-1-project/stock">Analyse</Nav.Link>
+                      <Nav.Link href="/portfolio">Portfolio</Nav.Link>
+                      <Nav.Link href="/stock">Analyse</Nav.Link>
                     </Nav>
                     {
                       <Search
@@ -61,7 +59,7 @@ class ScreenNav extends Component {
             }}
           />{" "}
           <Route
-            path="/PS-1-project/portfolio/"
+            path="/portfolio"
             exact
             render={() => {
               return (
@@ -74,8 +72,7 @@ class ScreenNav extends Component {
             }}
           />
           <Route
-            path="/PS-1-project/stock"
-            exact
+            path="/stock"
             render={() => {
               return (
                 <Screener

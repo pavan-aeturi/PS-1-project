@@ -15,6 +15,7 @@ class Screener extends React.Component {
   }
   componentDidMount() {
     pointerTothis = this;
+    this.props.changeAddress();
     this.fetchCost();
   }
 
@@ -32,7 +33,7 @@ class Screener extends React.Component {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
+        //console.log(data);
         for (var key in data["Time Series (Daily)"]) {
           stockValuesX.push(key);
           stockValuesY.push(data["Time Series (Daily)"][key]["1. open"]);
