@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import Button from "react-bootstrap/Button";
+import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
+import { Form } from "react-bootstrap";
+import { FormControl } from "react-bootstrap";
 let myptr;
 class Search extends Component {
   constructor(props) {

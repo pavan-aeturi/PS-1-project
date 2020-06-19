@@ -5,11 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import logo from "./assets/vt.jpg";
 import VirtualTrade from "./VirtualTrade";
-import Navbar from "react-bootstrap/Navbar";
+import { Navbar } from "react-bootstrap";
 import { Route } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import { Button } from "react-bootstrap";
 // import NavDropdown from "react-bootstrap/NavDropdown";
-import Nav from "react-bootstrap/Nav";
+import { Nav } from "react-bootstrap";
 import Search from "./search.js";
 import { BrowserRouter } from "react-router-dom";
 class ScreenNav extends Component {
