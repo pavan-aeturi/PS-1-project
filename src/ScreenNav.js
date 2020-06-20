@@ -3,11 +3,9 @@ import React, { Component } from "react";
 import Screener from "./Screener.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import logo from "./assets/vt.jpg";
-import VirtualTrade from "./VirtualTrade";
 import { Navbar } from "react-bootstrap";
 import { Route } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import Login from "./login";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 import { Nav } from "react-bootstrap";
 import Search from "./search.js";
@@ -24,9 +22,9 @@ class ScreenNav extends Component {
     this.setState({ stockName: node });
     //console.log(node);
   }
-  changeAddress(node) {
-    this.setState({ presentAddress: node });
-  }
+  // changeAddress(node) {
+  //   this.setState({ presentAddress: node });
+  // }
   render() {
     // const store = configureStore({ history });
     return (
@@ -36,71 +34,37 @@ class ScreenNav extends Component {
             path="/"
             render={() => {
               return (
-                <Navbar bg="light" expand="lg">
-                  <Navbar.Brand href="/">Virtual Trade</Navbar.Brand>
-                  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                  <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
-                      <Nav.Link href="/">Home</Nav.Link>
-                      <Nav.Link href="/portfolio">Portfolio</Nav.Link>
-                      <Nav.Link href="/stock">Analyse</Nav.Link>
-                    </Nav>
-                    {
-                      <Search
-                        stockName={this.state.stockName}
-                        calledit={(node) => {
-                          this.change(node);
-                        }}
-                      ></Search>
-                    }
-                  </Navbar.Collapse>
-                </Navbar>
-              );
-            }}
-          />{" "}
-          <Route
-            path="/portfolio"
-            exact
-            render={() => {
-              return (
-                <VirtualTrade
-                  changeAddress={() => {
-                    this.changeAddress("/portfolio");
-                  }}
-                ></VirtualTrade>
-              );
-            }}
-          />
-          <Route
-            path="/stock"
-            render={() => {
-              return (
-                <Screener
-                  changeAddress={() => {
-                    this.changeAddress("/stock");
-                  }}
-                  stockName={this.state.stockName}
-                ></Screener>
-              );
-            }}
-          />
-          <Route
-            path="/"
-            strict
-            exact
-            render={() => {
-              return (
                 <div>
-                  <br></br>
-                  <img src={logo} alt="Logo" width="800px" height="300px" />
-                  <br></br>
-                  <br></br>
-                  <Button variant="primary">Login</Button>
+                  <Navbar bg="light" expand="lg">
+                    <Navbar.Brand href="/">Virtual Trade</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                      <Nav className="mr-auto">
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/stock">Analyse</Nav.Link>
+                      </Nav>
+                      {
+                        <Search
+                          stockName={this.state.stockName}
+                          calledit={(node) => {
+                            this.change(node);
+                          }}
+                        ></Search>
+                      }
+                      {"  "}
+                      <Login></Login>
+                    </Navbar.Collapse>
+                  </Navbar>
+                  <Screener
+                    changeAddress={() => {
+                      this.changeAddress("/stock");
+                    }}
+                    stockName={this.state.stockName}
+                  ></Screener>
                 </div>
               );
             }}
-          />
-          {/* <chart></chart> */}
+          />{" "}
         </BrowserRouter>
       </div>
     );

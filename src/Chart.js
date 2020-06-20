@@ -15,7 +15,7 @@ class Chart extends React.Component {
               marker: { color: "purple" },
             },
           ]}
-          layout={{ width: 1000, height: 550, title: this.props.stockName }}
+          layout={{ width: 1000, height: 500, title: this.props.stockName }}
         />
       </div>
     );
