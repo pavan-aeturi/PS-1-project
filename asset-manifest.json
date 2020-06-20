@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/PS-1-project/static/css/main.fc5fd89e.chunk.css",
-    "main.js": "/PS-1-project/static/js/main.27b147ba.chunk.js",
-    "main.js.map": "/PS-1-project/static/js/main.27b147ba.chunk.js.map",
+    "main.css": "/PS-1-project/static/css/main.9afcf3de.chunk.css",
+    "main.js": "/PS-1-project/static/js/main.0c72c19e.chunk.js",
+    "main.js.map": "/PS-1-project/static/js/main.0c72c19e.chunk.js.map",
     "runtime-main.js": "/PS-1-project/static/js/runtime-main.472ba519.js",
     "runtime-main.js.map": "/PS-1-project/static/js/runtime-main.472ba519.js.map",
-    "static/css/2.30c2d978.chunk.css": "/PS-1-project/static/css/2.30c2d978.chunk.css",
-    "static/js/2.6d6d49a9.chunk.js": "/PS-1-project/static/js/2.6d6d49a9.chunk.js",
-    "static/js/2.6d6d49a9.chunk.js.map": "/PS-1-project/static/js/2.6d6d49a9.chunk.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/PS-1-project/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.d01bb780.chunk.js": "/PS-1-project/static/js/2.d01bb780.chunk.js",
+    "static/js/2.d01bb780.chunk.js.map": "/PS-1-project/static/js/2.d01bb780.chunk.js.map",
     "index.html": "/PS-1-project/index.html",
-    "precache-manifest.053c44beaee39bcbcdb719fbabb1dd24.js": "/PS-1-project/precache-manifest.053c44beaee39bcbcdb719fbabb1dd24.js",
+    "precache-manifest.9e69382ded3a04edbc1c43ff4fa27e58.js": "/PS-1-project/precache-manifest.9e69382ded3a04edbc1c43ff4fa27e58.js",
     "service-worker.js": "/PS-1-project/service-worker.js",
-    "static/css/2.30c2d978.chunk.css.map": "/PS-1-project/static/css/2.30c2d978.chunk.css.map",
-    "static/css/main.fc5fd89e.chunk.css.map": "/PS-1-project/static/css/main.fc5fd89e.chunk.css.map",
-    "static/js/2.6d6d49a9.chunk.js.LICENSE.txt": "/PS-1-project/static/js/2.6d6d49a9.chunk.js.LICENSE.txt"
+    "static/css/2.af3c1da9.chunk.css.map": "/PS-1-project/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.9afcf3de.chunk.css.map": "/PS-1-project/static/css/main.9afcf3de.chunk.css.map",
+    "static/js/2.d01bb780.chunk.js.LICENSE.txt": "/PS-1-project/static/js/2.d01bb780.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.472ba519.js",
-    "static/css/2.30c2d978.chunk.css",
-    "static/js/2.6d6d49a9.chunk.js",
-    "static/css/main.fc5fd89e.chunk.css",
-    "static/js/main.27b147ba.chunk.js"
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.d01bb780.chunk.js",
+    "static/css/main.9afcf3de.chunk.css",
+    "static/js/main.0c72c19e.chunk.js"
   ]
 }
