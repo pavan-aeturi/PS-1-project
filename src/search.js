@@ -30,7 +30,7 @@ class Search extends Component {
         <FormControl
           type="text"
           onChange={this.mychangeHandler}
-          placeholder="Search Stock"
+          placeholder="Security id"
           className="mr-sm-2"
         />
         <Button variant="primary" onClick={this.callit}>
