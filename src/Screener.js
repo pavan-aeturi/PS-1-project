@@ -1,6 +1,9 @@
 import React from "react";
 import Chart from "./Chart";
+import { CSVLink } from "react-csv";
+import { Button } from "react-bootstrap";
 import Loader from "react-loader-spinner";
+let datal = [];
 let pointerTothis;
 class Screener extends React.Component {
   constructor(props) {
@@ -33,10 +36,31 @@ class Screener extends React.Component {
         return response.json();
       })
       .then(function (data) {
-        //console.log(data);
+        datal.push([
+          "date",
+          "open",
+          "high",
+          "low",
+          "close",
+          "adjusted close",
+          "volume",
+          "dividend amount",
+          "split coefficient",
+        ]);
         for (var key in data["Time Series (Daily)"]) {
+          let k = [];
+          k.push(key);
+          k.push(data["Time Series (Daily)"][key]["1. open"]);
+          k.push(data["Time Series (Daily)"][key]["2. high"]);
+          k.push(data["Time Series (Daily)"][key]["3. low"]);
+          k.push(data["Time Series (Daily)"][key]["4. close"]);
+          k.push(data["Time Series (Daily)"][key]["5. adjusted close"]);
+          k.push(data["Time Series (Daily)"][key]["6. volume"]);
+          k.push(data["Time Series (Daily)"][key]["7. dividend amount"]);
+          k.push(data["Time Series (Daily)"][key]["8. split coefficient"]);
           stockValuesX.push(key);
-          stockValuesY.push(data["Time Series (Daily)"][key]["1. open"]);
+          stockValuesY.push(data["Time Series (Daily)"][key]["4. close"]);
+          datal.push(k);
         }
         pointerTothis.setState({
           stockChartValueX: stockValuesX,
@@ -60,11 +84,30 @@ class Screener extends React.Component {
       );
     } else
       return (
-        <Chart
-          stockName={this.props.stockName}
-          stockChartValueX={this.state.stockChartValueX}
-          stockChartValueY={this.state.stockChartValueY}
-        ></Chart>
+        <div style={{ display: "inline-block" }}>
+          {/* <strong>STOCK SCREENER</strong> */}
+          <div style={{ display: "inline-block", float: "right" }}>
+            {" "}
+            <CSVLink
+              data={datal}
+              asyncOnClick={true}
+              filename={"Times series" + this.props.stockName + ".csv"}
+            >
+              import csv
+            </CSVLink>
+          </div>
+          <div style={{ display: "inline-block" }}>
+            <Chart
+              stockName={this.props.stockName}
+              stockChartValueX={this.state.stockChartValueX}
+              stockChartValueY={this.state.stockChartValueY}
+            ></Chart>
+            <p>
+              These are the closing prices of {this.props.stockName} plotted for
+              last 100 days
+            </p>
+          </div>
+        </div>
       );
   }
 }

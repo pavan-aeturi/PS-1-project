@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form } from "react-bootstrap";
@@ -24,6 +23,7 @@ class Search extends Component {
     myptr.setState({ stockName: val });
     // console.log(myptr.state.stockName);
   }
+
   render() {
     return (
       <Form inline>
