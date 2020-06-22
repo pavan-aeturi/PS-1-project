@@ -67,6 +67,11 @@ class Login extends React.Component {
         <Button
           className="btn"
           variant="success"
+          style={{
+            display: "inline-block",
+            textAlign: "center",
+            marginBottom: "4px",
+          }}
           onClick={() => {
             this.openModal();
           }}

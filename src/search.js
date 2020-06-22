@@ -26,7 +26,14 @@ class Search extends Component {
 
   render() {
     return (
-      <Form inline>
+      <Form
+        inline
+        style={{
+          textAlign: "center",
+          display: "inline-block",
+          marginBottom: "4px",
+        }}
+      >
         <FormControl
           type="text"
           onChange={this.mychangeHandler}
