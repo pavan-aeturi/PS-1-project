@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "./Chart";
 import { CSVLink } from "react-csv";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import Loader from "react-loader-spinner";
 let datal = [];
 let pointerTothis;
@@ -84,10 +84,10 @@ class Screener extends React.Component {
       );
     } else
       return (
-        <div style={{ display: "inline-block" }}>
+        <div>
           {/* <strong>STOCK SCREENER</strong> */}
+
           <div style={{ display: "inline-block", float: "right" }}>
-            {" "}
             <CSVLink
               data={datal}
               asyncOnClick={true}
@@ -96,7 +96,8 @@ class Screener extends React.Component {
               import csv
             </CSVLink>
           </div>
-          <div style={{ display: "inline-block" }}>
+          <br></br>
+          <div>
             <Chart
               stockName={this.props.stockName}
               stockChartValueX={this.state.stockChartValueX}

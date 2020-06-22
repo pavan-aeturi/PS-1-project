@@ -40,17 +40,18 @@ class ScreenNav extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                       <Nav className="mr-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/stock">Analyse</Nav.Link>
+                        <Nav.Link href="#">Home</Nav.Link>
+                        <Nav.Link href="https://docs.google.com/spreadsheets/d/1ymMHn4gE9Gjjtvw3bGVlD_9CbdfDm01_cLBRd5nRN_M/edit#gid=1328995412">
+                          Browse
+                        </Nav.Link>
                       </Nav>
-                      {
-                        <Search
-                          stockName={this.state.stockName}
-                          calledit={(node) => {
-                            this.change(node);
-                          }}
-                        ></Search>
-                      }
+
+                      <Search
+                        stockName={this.state.stockName}
+                        calledit={(node) => {
+                          this.change(node);
+                        }}
+                      ></Search>
 
                       {"  "}
                       <Login></Login>
