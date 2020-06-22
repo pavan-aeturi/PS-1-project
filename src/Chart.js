@@ -4,6 +4,11 @@ class Chart extends React.Component {
   render() {
     return (
       <Plot
+        style={{
+          marginLeft: "30px",
+          width: "95%",
+          height: "100%",
+        }}
         data={[
           {
             x: this.props.stockChartValueX,
@@ -13,7 +18,14 @@ class Chart extends React.Component {
             marker: { color: "purple" },
           },
         ]}
-        layout={{ width: 1000, height: 500, title: this.props.stockName }}
+        layout={{
+          height: 500,
+          title: this.props.stockName,
+          autosize: true,
+        }}
+        config={{
+          responsive: true,
+        }}
       />
     );
   }

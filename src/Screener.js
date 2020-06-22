@@ -97,7 +97,7 @@ class Screener extends React.Component {
             </CSVLink>
           </div>
           <br></br>
-          <div>
+          <div style={{ display: "inline-center" }}>
             <Chart
               stockName={this.props.stockName}
               stockChartValueX={this.state.stockChartValueX}
