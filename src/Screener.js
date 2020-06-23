@@ -13,6 +13,11 @@ class Screener extends React.Component {
       stockChartValueX: [],
       stockChartValueY: [],
       stockName: this.props.stockName,
+      presentPrice: 0,
+      change: 0,
+      changepercent: 0,
+      QuoteX: [],
+      QuoteY: [],
       inProgress: true,
     };
   }
@@ -29,8 +34,48 @@ class Screener extends React.Component {
       this.props.stockName +
       ".BSE&outputsize=compact&apikey=" +
       APIKEY;
+    let QUOTE_CALL =
+      "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" +
+      this.props.stockName +
+      ".BSE&apikey=" +
+      APIKEY;
     let stockValuesX = [];
     let stockValuesY = [];
+    let quotex = [];
+    let quotey = [];
+    fetch(QUOTE_CALL)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        quotex = [
+          "symbol",
+          "open",
+          "high",
+          "low",
+          "price",
+          "volume",
+          "latest trading day",
+          "previous close",
+          "change",
+          "change percent",
+        ];
+        for (var key in data["Global Quote"]) {
+          quotey.push(data["Global Quote"][key]);
+        }
+        pointerTothis.setState({
+          QuoteX: quotex,
+          QuoteY: quotey,
+          presentPrice: quotey[4],
+          change: quotey[8],
+          changepercent: quotey[9],
+        });
+
+        if (parseFloat(pointerTothis.state.change) < 0)
+          pointerTothis.setState({ color: "#e75757" });
+        else pointerTothis.setState({ color: "#2BAD60" });
+        // pointerTothis.setState({ inProgress: false });
+      });
     fetch(API_CALL)
       .then(function (response) {
         return response.json();
@@ -96,6 +141,23 @@ class Screener extends React.Component {
               import csv
             </CSVLink>
           </div>
+          <br></br>
+          <div
+            style={{
+              display: "inline-block",
+              float: "left",
+              fontFamily: "Helvetica",
+            }}
+          >
+            <span>
+              {this.props.stockName}:{" "}
+              <span style={{ color: this.state.color }}>
+                {this.state.presentPrice}
+              </span>{" "}
+              INR {this.state.change} ({this.state.changepercent})
+            </span>
+          </div>
+
           <br></br>
           <div style={{ display: "inline-center" }}>
             <Chart
