@@ -154,7 +154,12 @@ class Screener extends React.Component {
               <span style={{ color: this.state.color }}>
                 {this.state.presentPrice}
               </span>{" "}
-              INR {this.state.change} ({this.state.changepercent})
+              INR{" "}
+              <span style={{ color: this.state.color }}>
+                {" "}
+                {this.state.change}{" "}
+              </span>
+              ({this.state.changepercent})
             </span>
           </div>
 
