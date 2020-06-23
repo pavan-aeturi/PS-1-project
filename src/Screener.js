@@ -18,7 +18,9 @@ class Screener extends React.Component {
       changepercent: 0,
       QuoteX: [],
       QuoteY: [],
+      padding: ["4px", "4px", "4px"],
       inProgress: true,
+      count: 0,
     };
   }
   componentDidMount() {
@@ -71,9 +73,18 @@ class Screener extends React.Component {
           changepercent: quotey[9],
         });
 
-        if (parseFloat(pointerTothis.state.change) < 0)
+        if (parseFloat(pointerTothis.state.change) < 0) {
+          let k = ["8px", "4px", "4px"];
+          pointerTothis.setState({ padding: k });
           pointerTothis.setState({ color: "#e75757" });
-        else pointerTothis.setState({ color: "#2BAD60" });
+        } else if (parseFloat(pointerTothis.state.change) === 0) {
+          let k = ["4px", "8px", "4px"];
+          pointerTothis.setState({ padding: k });
+        } else {
+          let k = ["4px", "4px", "8px"];
+          pointerTothis.setState({ padding: k });
+          pointerTothis.setState({ color: "#2BAD60" });
+        }
         // pointerTothis.setState({ inProgress: false });
       });
     fetch(API_CALL)
@@ -162,7 +173,47 @@ class Screener extends React.Component {
               ({this.state.changepercent})
             </span>
           </div>
+          <br></br>
+          <br></br>
+          <div
+            style={{
+              display: "inline-block",
+              float: "left",
+              // marginBottom: "12px",
 
+              fontFamily: "Helvetica",
+              color: "white",
+            }}
+          >
+            <span
+              style={{
+                backgroundColor: "#e75757",
+                padding: this.state.padding[0],
+                borderRadius: "4px",
+              }}
+            >
+              Sell
+            </span>
+            <span
+              style={{
+                backgroundColor: "#f4c430",
+                padding: this.state.padding[1],
+                borderRadius: "4px",
+              }}
+            >
+              Hold
+            </span>
+            <span
+              style={{
+                backgroundColor: "#2BAD60",
+                padding: this.state.padding[2],
+                borderRadius: "4px",
+              }}
+            >
+              Buy
+            </span>
+          </div>
+          <br></br>
           <br></br>
           <div style={{ display: "inline-center" }}>
             <Chart
