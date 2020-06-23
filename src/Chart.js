@@ -2,6 +2,7 @@ import React from "react";
 import Plot from "react-plotly.js";
 
 class Chart extends React.Component {
+  
   render() {
     return (
       <Plot
