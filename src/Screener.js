@@ -30,7 +30,8 @@ class Screener extends React.Component {
   }
 
   fetchCost() {
-    const APIKEY = "2RON97OB1OCVMAXA";
+    const APIKEY = "P61KNOCIG0KT699C";
+    console.log(this.props.stockName);
     let API_CALL =
       "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=" +
       this.props.stockName +
@@ -39,8 +40,7 @@ class Screener extends React.Component {
     let QUOTE_CALL =
       "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" +
       this.props.stockName +
-      ".BSE&apikey=" +
-      APIKEY;
+      ".BSE&apikey=Q6U0M2QAI2PDHCXI";
     let stockValuesX = [];
     let stockValuesY = [];
     let quotex = [];
@@ -50,6 +50,7 @@ class Screener extends React.Component {
         return response.json();
       })
       .then(function (data) {
+        console.log(data);
         quotex = [
           "symbol",
           "open",
@@ -92,6 +93,8 @@ class Screener extends React.Component {
         return response.json();
       })
       .then(function (data) {
+        console.log(data);
+        datal = [];
         datal.push([
           "date",
           "open",
@@ -103,6 +106,9 @@ class Screener extends React.Component {
           "dividend amount",
           "split coefficient",
         ]);
+
+        stockValuesY = [];
+        stockValuesX = [];
         for (var key in data["Time Series (Daily)"]) {
           let k = [];
           k.push(key);
